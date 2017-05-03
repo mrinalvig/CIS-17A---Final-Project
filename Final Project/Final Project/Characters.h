@@ -5,7 +5,6 @@ class Characters
 {
 private:
 	std::string name;
-	std::string race;
 
 public:
 
@@ -13,7 +12,7 @@ public:
 	int health;
 	std::string info();
 
-	Characters(std::string race, std::string name, int power, int health);
+	Characters(std::string name, int power, int health);
 	~Characters();
 
 };

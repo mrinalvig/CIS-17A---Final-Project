@@ -2,7 +2,7 @@
 
 std::string Forms::oInfo()
 {
-	return "\n OUTFITS  \nDefault Outfit: " + defaultOutfit + "\nBonus Outfits: " + bonusOutfit + "";
+	return "\nForms  \nDefault Outfit: " + defaultOutfit + "\nBonus Outfits: " + bonusOutfit + "";
 }
 
 Forms::Forms(std::string oDefault, std::string oBonus)
