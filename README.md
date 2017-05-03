@@ -20,3 +20,4 @@ The purpose of the final project is to demonstrate a solid understanding of the 
 
 ## Extra Credit
 + [ ] UML Diagram - Complete
++ [ ] Multiple Inheritance
