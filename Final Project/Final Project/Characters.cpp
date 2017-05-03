@@ -4,7 +4,7 @@ using namespace std;
 
 string Characters::info()
 {
-	return "Welcome " + name + "\nPower level: lvl " + to_string(power) + "\nHealth: " + to_string(health) + " hp";
+	return "" + name + "\nPower level: lvl " + to_string(power) + "\nHealth: " + to_string(health) + " hp \n";
 }
 
 Characters::Characters(string iName, int iPower, int iHealth)

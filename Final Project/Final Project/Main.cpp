@@ -14,8 +14,30 @@ void printForms();
 
 int main()
 {
+	int thing = 1;
 	
-	
+	while (thing = 1)
+	{
+		system("cls");
+		cout << "Welcome to Kingdom Hearts 2 Stats! Would you like info on: \n1. Characters \n2. Weapons \n3. Abilities \n4. Forms" << endl;
+		int choice;
+		cin >> choice;
+
+		switch (choice)
+		{
+
+		case 1: printCharacter();
+			break;
+		case 2: printWeapons();
+			break;
+		case 3:printAbilities();
+			break;
+		case 4:printForms();
+			break;
+
+		default: break;
+		}
+	}
 	
 	
 
@@ -26,12 +48,56 @@ int main()
 
 void printCharacter()
 {
-	Characters dante = Characters("Dante", 100, 100);
-	Characters vergil = Characters("Vergil", 80, 100);
+	system("cls");
 
-	cout << dante.info() << endl;
-	cout << vergil.info() << endl;
+	Characters sora = Characters("Sora starting out", 1, 10);
+	Characters mSora = Characters("Sora maxed out", 99, 111);
+	Characters donald = Characters("Donald starting out", 1, 10);
+	Characters mDonald = Characters("Donald maxed out", 99, 111);
+	Characters goofy = Characters("Goofy starting out", 1, 10);
+	Characters mGoofy = Characters("Goofy maxed out", 99, 111);
 
+	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
+	int choice;
+	cin >> choice;
+
+
+	switch (choice)
+	{
+
+	case 1: {
+		cout << sora.info() << endl;
+		cout << mSora.info() << endl;
+		break;
+	}
+		
+	case 2: {
+		cout << donald.info() << endl;
+		cout << mDonald.info() << endl;
+		break;
+	}
+		
+	case 3: {
+		cout << goofy.info() << endl;
+		cout << mGoofy.info() << endl;
+		break;
+	}
+		
+	case 4: {
+		cout << sora.info() << endl;
+		cout << mSora.info() << endl;
+		cout << donald.info() << endl;
+		cout << mDonald.info() << endl;
+		cout << goofy.info() << endl;
+		cout << mGoofy.info() << endl;
+		break;
+	}
+		
+
+	default: break;
+	}
+	
+	system("pause");
 }
 
 void printWeapons()
