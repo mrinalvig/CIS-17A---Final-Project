@@ -4,12 +4,11 @@
 class Forms
 {
 private:
-	std::string defaultOutfit;
+	std::string outfits;
+
 public:
-	std::string bonusOutfit;
+	std::string info();
 
-	std::string oInfo();
-
-	Forms(std::string defaultOutfit, std::string bonusOutfit);
+	Forms(std::string outfits);
 	~Forms();
 };

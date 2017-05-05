@@ -1,17 +1,14 @@
 #include "Abilities.h"
 #include <string>
 
-std::string Abilities::aInfo()
+std::string Abilities::info()
 {
-	return "\nABILITIES\nAngelic Abilities: \n"
-		+ angelicAbilities + "\n\nDemonic Abilities: \n" + demonicAbilities + "\n\nGeneral Abilities: \n" + generalAbilities + "";
+	return "\nABILITIES: " + abilities;
 }
 
-Abilities::Abilities(std::string aAngelic, std::string aDemonic, std::string aGeneral)
+Abilities::Abilities(std::string aAbilities)
 {
-	angelicAbilities = aAngelic;
-	demonicAbilities = aDemonic;
-	generalAbilities = aGeneral;
+	abilities = aAbilities;
 }
 
 

@@ -3,13 +3,12 @@
 
 class Abilities
 {
+private:
+	std::string abilities;
+
 public:
-	std::string angelicAbilities;
-	std::string demonicAbilities;
-	std::string generalAbilities;
+	std::string info();
 
-	std::string aInfo();
-
-	Abilities(std::string angelicAbilities, std::string demonicAbilities, std::string generalAbilities);
+	Abilities(std::string abilities);
 	~Abilities();
 };

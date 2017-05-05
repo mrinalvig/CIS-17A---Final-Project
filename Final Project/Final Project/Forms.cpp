@@ -1,14 +1,14 @@
 #include "Forms.h"
 
-std::string Forms::oInfo()
+std::string Forms::info()
 {
-	return "\nForms  \nDefault Outfit: " + defaultOutfit + "\nBonus Outfits: " + bonusOutfit + "";
+	return "\nForms: " + outfits;
 }
 
-Forms::Forms(std::string oDefault, std::string oBonus)
+Forms::Forms(std::string oOutfits)
 {
-	defaultOutfit = oDefault;
-	bonusOutfit = oBonus;
+	outfits = oOutfits;
+	
 }
 
 

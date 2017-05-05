@@ -38,9 +38,6 @@ int main()
 		default: break;
 		}
 	}
-	
-	
-
 
 	getchar();
 	return 0;
@@ -105,9 +102,65 @@ void printWeapons()
 {
 	system("cls");
 
-	Weapons sora = Weapons("\n\nKindom Key \nStar Seeker \nHidden Dragon \nHero's Crest \nMonochrome \nFollow the Wind \nCircle of Life \nPhoton Debugger \nOathkeeper \nRumbling Rose \nGuardian Soul \nWishing Lamp \nDecisive Pumpin \nMysterious Abyss \nGull Wing \nSleeping Lion \nSweet Memory \nBond of Flame \nFatal Crest \nOblivion \nFenrir \nUltima Weapon");
-	Weapons donald = Weapons("\n\nMage's Staff \nHammer Staff \nComet Staff \nVictory Bell \nLord's Broom \nRising Dragon \nWisdom Wand \nShaman's Relic \nNobody Lance \nSave the Queen \nSave the Queen +");
-	Weapons donald = Weapons("")
+	Weapons sora = Weapons("\n\nKindom Key \nStar Seeker \nHidden Dragon \nHero's Crest \nMonochrome" 
+		"\nFollow the Wind \nCircle of Life \nPhoton Debugger \nOathkeeper \nRumbling Rose \nGuardian Soul" 
+		"\nWishing Lamp \nDecisive Pumpin \nMysterious Abyss \nGull Wing \nSleeping Lion \nSweet Memory" 
+		"\nBond of Flame \nFatal Crest \nOblivion \nFenrir \nUltima Weapon\n");
+
+	Weapons donald = Weapons("\n\nMage's Staff \nHammer Staff \nComet Staff \nVictory Bell \nLord's Broom" 
+		"\nRising Dragon \nWisdom Wand \nShaman's Relic \nNobody Lance \nSave the Queen \nSave the Queen +\n");
+
+	Weapons goofy = Weapons("\n\nKnight's Shield \nAdamant Shield \nFalling Star \nChain Gear \nDreamcloud" 
+		"\nOgre Shield \nGenji Shield \nKnight Defender \nAkashic Record \nNobody Guard \nSave the King \nSave the King +\n");
+
+	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
+	int choice;
+	cin >> choice;
+
+	system("cls");
+
+	switch (choice)
+	{
+
+		case 1: {
+			cout << sora.info() << endl;
+			break;
+		}
+
+		case 2: {
+			cout << donald.info() << endl;
+			break;
+		}
+
+		case 3: {
+			cout << goofy.info() << endl;
+			break;
+		}
+
+		case 4: {
+			cout << sora.info() << endl;
+			cout << donald.info() << endl;
+			cout << goofy.info() << endl;
+			break;
+		}
+
+	default: break;
+	}
+
+	system("pause");
+}
+
+void printAbilities()
+{
+	system("cls");
+
+	Abilities sora = Abilities("\n\nGuard \nUpper Slash \nHorizontal Slash \nFinishing Leap \nRetaliating Slash" 
+		"\nSlapshot \nDoge Slash \nSlide Dash \nGuard Break \nExplosion \nAerial Sweep \nAerial Spiral \nAerial Finish" 
+		"\nCounterGuard \nAuto Valor \nAuto Master \nAuto Final \nAuto Summon \nTrinity Limit\n");
+
+	Abilities donald = Abilities("\n\nDonald Fire \nDonald Blizzard \nDonald Thunder \nDonald Cure \nFantasia \nFlare Force\n");
+	
+	Abilities goofy = Abilities("\n\nGoofy Tornado \nGoofy Bash \nGoofy Turbo \nTeamwork \nTornado Fusion\n");
 
 	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
 	int choice;
@@ -140,32 +193,22 @@ void printWeapons()
 		break;
 	}
 
-
 	default: break;
 	}
 
-	cout << sora.info() << endl;
-
 	system("pause");
-}
-
-void printAbilities()
-{
-	Abilities aDante = Abilities("Angel Boost, Ophion Angel Lift, and Angel Evade", "Ophion Demon Pull, Ophion Demon Kicker, Demon Evade, and Devil Trigger",
-		"Jump, Double Jump, Enemy Step, Evade, and Leap");
-	Abilities aVergil = Abilities("Angel Boost and Vergil Angel Lift", "Vergil Deamon Pull", "Jump, Enemy Step, Evade, Trick Up, and Trick Down");
-
-	cout << aDante.aInfo() << endl;
-	cout << aVergil.aInfo() << endl;
+	
 
 }
 
 void printForms()
 {
-	Forms oDante = Forms("Standard", "Original, Son of Sparda, Classic Dante, Neo Dante, Dark Dante, DMC 1 Dante");
-	Forms oVergil = Forms("Standard", "Weak Vergil, DMC 3 Vergil, Standard (Subsequent Playthroughs)");
+	system("cls");
 
-	cout << oDante.oInfo() << endl;
-	cout << oVergil.oInfo() << endl;
+	Forms sora = Forms("\n\nValor Form \nWisdom Form \nMaster Form \nFinal Form \nAnti Form \n");
 
+	cout << "Sora is the only one with multiple forms. \n" << endl;
+	cout << sora.info() << endl;
+
+	system("pause");
 }
