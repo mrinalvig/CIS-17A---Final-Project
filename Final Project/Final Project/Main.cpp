@@ -50,17 +50,18 @@ void printCharacter()
 {
 	system("cls");
 
-	Characters sora = Characters("Sora starting out", 1, 10);
-	Characters mSora = Characters("Sora maxed out", 99, 111);
-	Characters donald = Characters("Donald starting out", 1, 10);
-	Characters mDonald = Characters("Donald maxed out", 99, 111);
-	Characters goofy = Characters("Goofy starting out", 1, 10);
-	Characters mGoofy = Characters("Goofy maxed out", 99, 111);
+	Characters sora = Characters("Sora - starting out", 1, 10);
+	Characters mSora = Characters("Sora - maxed out", 99, 111);
+	Characters donald = Characters("Donald - starting out", 1, 10);
+	Characters mDonald = Characters("Donald - maxed out", 99, 111);
+	Characters goofy = Characters("Goofy - starting out", 1, 10);
+	Characters mGoofy = Characters("Goofy - maxed out", 99, 111);
 
 	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
 	int choice;
 	cin >> choice;
 
+	system("cls");
 
 	switch (choice)
 	{
@@ -102,11 +103,50 @@ void printCharacter()
 
 void printWeapons()
 {
-	Weapons wDante = Weapons("Rebellion, Arbiter, and Eryx", "Osiris and Aquila", "Ebony & Ivory, Revenant, and Kablooey");
-	Weapons wVergil = Weapons("Yamato Devil Mode", "Yamato Angel Mode", "Sword Illusion, Doppleganger");
+	system("cls");
 
-	cout << wDante.wInfo() << endl;
-	cout << wVergil.wInfo() << endl;
+	Weapons sora = Weapons("\n\nKindom Key \nStar Seeker \nHidden Dragon \nHero's Crest \nMonochrome \nFollow the Wind \nCircle of Life \nPhoton Debugger \nOathkeeper \nRumbling Rose \nGuardian Soul \nWishing Lamp \nDecisive Pumpin \nMysterious Abyss \nGull Wing \nSleeping Lion \nSweet Memory \nBond of Flame \nFatal Crest \nOblivion \nFenrir \nUltima Weapon");
+	Weapons donald = Weapons("\n\nMage's Staff \nHammer Staff \nComet Staff \nVictory Bell \nLord's Broom \nRising Dragon \nWisdom Wand \nShaman's Relic \nNobody Lance \nSave the Queen \nSave the Queen +");
+	Weapons donald = Weapons("")
+
+	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
+	int choice;
+	cin >> choice;
+
+	system("cls");
+
+	switch (choice)
+	{
+
+	case 1: {
+		cout << sora.info() << endl;
+		break;
+	}
+
+	case 2: {
+		cout << donald.info() << endl;
+		break;
+	}
+
+	case 3: {
+		cout << goofy.info() << endl;
+		break;
+	}
+
+	case 4: {
+		cout << sora.info() << endl;
+		cout << donald.info() << endl;
+		cout << goofy.info() << endl;
+		break;
+	}
+
+
+	default: break;
+	}
+
+	cout << sora.info() << endl;
+
+	system("pause");
 }
 
 void printAbilities()

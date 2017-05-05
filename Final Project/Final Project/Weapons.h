@@ -5,14 +5,13 @@
 class Weapons
 {
 private:
-	std::string weaponHeaven;
-	std::string weaponHell;
+	std::string keyblades;
 
 public:
 	std::string weaponExtra;
-	std::string wInfo();
+	std::string info();
 
-	Weapons(std::string weaponHeaven, std::string weaponHell, std::string weaponExtra);
+	Weapons(std::string keyblades);
 	~Weapons();
 };
 

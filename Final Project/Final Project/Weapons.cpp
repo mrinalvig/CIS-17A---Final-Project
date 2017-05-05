@@ -1,16 +1,15 @@
 #include "Weapons.h"
 
 
-std::string Weapons::wInfo()
+std::string Weapons::info()
 {
-	return "\nWEAPONS\nHell Weapons: " + weaponHell + "\nHeavenly Weapons: " + weaponHeaven + "\nExtra Weapons: " + weaponExtra + " ";
+	return "WEAPONS: " + keyblades;
 }
 
-Weapons::Weapons(std::string wHell, std::string wHeaven, std::string wExtra)
+Weapons::Weapons(std::string wKeyblades)
 {
-	weaponHell = wHell;
-	weaponHeaven = wHeaven;
-	weaponExtra = wExtra;
+	keyblades = wKeyblades;
+	
 }
 
 
