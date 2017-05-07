@@ -19,7 +19,7 @@ int main()
 	while (thing = 1)
 	{
 		system("cls");
-		cout << "Welcome to Kingdom Hearts 2 Stats! Would you like info on: \n1. Characters \n2. Weapons \n3. Abilities \n4. Forms" << endl;
+		cout << "Welcome to Kingdom Hearts 2 Stats! Would you like info on: \n1. Characters \n2. Weapons \n3. Abilities \n4. Forms \n5. Exit" << endl;
 		int choice;
 		cin >> choice;
 
@@ -33,6 +33,8 @@ int main()
 		case 3:printAbilities();
 			break;
 		case 4:printForms();
+			break;
+		case 5: return 0;
 			break;
 
 		default: break;
@@ -121,21 +123,16 @@ void printWeapons()
 
 	switch (choice)
 	{
-
-		case 1: {
-			cout << sora.info() << endl;
+		case 1: cout << sora.info() << endl;
 			break;
-		}
-
-		case 2: {
-			cout << donald.info() << endl;
+		
+		case 2: cout << donald.info() << endl;
 			break;
-		}
+		
 
-		case 3: {
-			cout << goofy.info() << endl;
+		case 3: cout << goofy.info() << endl;
 			break;
-		}
+		
 
 		case 4: {
 			cout << sora.info() << endl;
@@ -170,28 +167,24 @@ void printAbilities()
 
 	switch (choice)
 	{
+		case 1: cout << sora.info() << endl;
+			break;
+	
 
-	case 1: {
-		cout << sora.info() << endl;
-		break;
-	}
+		case 2: cout << donald.info() << endl;
+			break;
+	
 
-	case 2: {
-		cout << donald.info() << endl;
-		break;
-	}
+		case 3: cout << goofy.info() << endl;
+			break;
+	
 
-	case 3: {
-		cout << goofy.info() << endl;
-		break;
-	}
-
-	case 4: {
-		cout << sora.info() << endl;
-		cout << donald.info() << endl;
-		cout << goofy.info() << endl;
-		break;
-	}
+		case 4: {
+			cout << sora.info() << endl;
+			cout << donald.info() << endl;
+			cout << goofy.info() << endl;
+			break;
+		}
 
 	default: break;
 	}

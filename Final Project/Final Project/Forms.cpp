@@ -2,7 +2,7 @@
 
 std::string Forms::info()
 {
-	return "\nForms: " + outfits;
+	return "Forms: " + outfits;
 }
 
 Forms::Forms(std::string oOutfits)
