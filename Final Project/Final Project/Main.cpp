@@ -4,6 +4,7 @@
 #include "Weapons.h"
 #include "Abilities.h"
 #include "Forms.h"
+#include "Information.h"
 using namespace std;
 
 void printCharacter();
@@ -25,7 +26,6 @@ int main()
 
 		switch (choice)
 		{
-
 		case 1: printCharacter();
 			break;
 		case 2: printWeapons();
@@ -147,17 +147,17 @@ void printWeapons()
 	system("pause");
 }
 
-void printAbilities()
+void printAbilities(const shared_ptr<Information> information)
 {
 	system("cls");
 
-	Abilities sora = Abilities("\n\nGuard \nUpper Slash \nHorizontal Slash \nFinishing Leap \nRetaliating Slash" 
-		"\nSlapshot \nDoge Slash \nSlide Dash \nGuard Break \nExplosion \nAerial Sweep \nAerial Spiral \nAerial Finish" 
-		"\nCounterGuard \nAuto Valor \nAuto Master \nAuto Final \nAuto Summon \nTrinity Limit\n");
-
-	Abilities donald = Abilities("\n\nDonald Fire \nDonald Blizzard \nDonald Thunder \nDonald Cure \nFantasia \nFlare Force\n");
+	string sAbilities = "\n\nGuard \nUpper Slash \nHorizontal Slash \nFinishing Leap \nRetaliating Slash"
+		"\nSlapshot \nDoge Slash \nSlide Dash \nGuard Break \nExplosion \nAerial Sweep \nAerial Spiral \nAerial Finish"
+		"\nCounterGuard \nAuto Valor \nAuto Master \nAuto Final \nAuto Summon \nTrinity Limit\n";
 	
-	Abilities goofy = Abilities("\n\nGoofy Tornado \nGoofy Bash \nGoofy Turbo \nTeamwork \nTornado Fusion\n");
+	string dAbilities = "\n\nDonald Fire \nDonald Blizzard \nDonald Thunder \nDonald Cure \nFantasia \nFlare Force\n";
+
+	string gAbilities = "\n\nGoofy Tornado \nGoofy Bash \nGoofy Turbo \nTeamwork \nTornado Fusion\n";
 
 	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
 	int choice;
@@ -167,22 +167,19 @@ void printAbilities()
 
 	switch (choice)
 	{
-		case 1: cout << sora.info() << endl;
+	case 1: {
+		information->AddSoraAbilities(sAbilities);
+		information->sAbilitiesInfo;
+	}
 			break;
-	
-
-		case 2: cout << donald.info() << endl;
+		case 2: information->AddDonaldAbilities(dAbilities);
 			break;
-	
-
-		case 3: cout << goofy.info() << endl;
+		case 3: information->AddGoofyAbilities(gAbilities);
 			break;
-	
-
 		case 4: {
-			cout << sora.info() << endl;
-			cout << donald.info() << endl;
-			cout << goofy.info() << endl;
+			information->AddSoraAbilities(sAbilities);
+			information->AddDonaldAbilities(dAbilities);
+			information->AddGoofyAbilities(gAbilities);
 			break;
 		}
 

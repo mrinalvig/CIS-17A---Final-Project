@@ -58,3 +58,46 @@ void Information::AddGoofyWeapons(std::string name)
 	auto gWeapons = std::make_shared<Weapons>(name);
 	goofyWeapons.push_back(gWeapons);
 }
+
+std::string Information::sAbilitiesInfo()
+{
+	std::string result = "ABILITIES: \n";
+	result += soraAbilities.pop_back;
+
+	return result;
+}
+
+std::string Information::dAbilitiesInfo()
+{
+	return std::string();
+}
+
+std::string Information::gAbilitiesInfo()
+{
+	return std::string();
+}
+
+std::string Information::charactersInfo()
+{
+	return std::string();
+}
+
+std::string Information::formsInfo()
+{
+	return std::string();
+}
+
+std::string Information::sWeaponsInfo()
+{
+	return std::string();
+}
+
+std::string Information::dWeaponsInfo()
+{
+	return std::string();
+}
+
+std::string Information::gWeaponsInfo()
+{
+	return std::string();
+}

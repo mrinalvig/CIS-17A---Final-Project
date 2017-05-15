@@ -35,7 +35,14 @@ public:
 	void AddDonaldWeapons(std::string name);
 	void AddGoofyWeapons(std::string name);
 
-	
+	std::string sAbilitiesInfo();
+	std::string dAbilitiesInfo();
+	std::string gAbilitiesInfo();
+	std::string charactersInfo();
+	std::string formsInfo();
+	std::string sWeaponsInfo();
+	std::string dWeaponsInfo();
+	std::string gWeaponsInfo();
 
 
 };
