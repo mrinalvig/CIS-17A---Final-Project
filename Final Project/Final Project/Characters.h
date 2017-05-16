@@ -12,7 +12,7 @@ public:
 	int health;
 	std::string info();
 
-	Characters(std::string name, int power, int health);
+	Characters(std::string name);
 	~Characters();
 
 };

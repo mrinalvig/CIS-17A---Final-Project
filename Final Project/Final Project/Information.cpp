@@ -6,14 +6,13 @@ Information::Information(std::string _name)
 	name = _name;
 }
 
-
 Information::~Information()
 {
 }
 
-void Information::AddSoraAbilities(std::string name)
+void Information::AddSoraAbilities(std::string _name)
 {
-	auto sAbilities = std::make_shared<Abilities>(name);
+	auto sAbilities = std::make_shared<Abilities>(_name);
 	soraAbilities.push_back(sAbilities);
 }
 
@@ -29,10 +28,22 @@ void Information::AddGoofyAbilities(std::string name)
 	goofyAbilities.push_back(gAbilities);
 }
 
-void Information::AddCharacters(std::string name)
+void Information::AddSoraCharacters(std::string name)
 {
 	auto characterss = std::make_shared<Characters>(name);
-	characters.push_back(characterss);
+	soraCharacters.push_back(characterss);
+}
+
+void Information::AddDonaldCharacters(std::string name)
+{
+	auto characterss = std::make_shared<Characters>(name);
+	donaldCharacters.push_back(characterss);
+}
+
+void Information::AddGoofyCharacters(std::string name)
+{
+	auto characterss = std::make_shared<Characters>(name);
+	goofyCharacters.push_back(characterss);
 }
 
 void Information::AddForms(std::string name)
@@ -62,7 +73,8 @@ void Information::AddGoofyWeapons(std::string name)
 std::string Information::sAbilitiesInfo()
 {
 	std::string result = "ABILITIES: \n";
-	result += soraAbilities.pop_back;
+	
+	//result += soraAbilities.pop_back();
 
 	return result;
 }
@@ -77,7 +89,17 @@ std::string Information::gAbilitiesInfo()
 	return std::string();
 }
 
-std::string Information::charactersInfo()
+std::string Information::sCharactersInfo()
+{
+	return std::string();
+}
+
+std::string Information::dCharactersInfo()
+{
+	return std::string();
+}
+
+std::string Information::gCharactersInfo()
 {
 	return std::string();
 }
