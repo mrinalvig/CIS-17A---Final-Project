@@ -51,12 +51,12 @@ void printCharacter(const shared_ptr<Information> information)
 {
 	system("cls");
 
-	string sora = "Sora - starting out \nPower level: lvl 1 \nHealth: 10hp";
-	string mSora = "Sora - maxed out \nPower level: lvl 99 \nHealth: 111hp";
-	string donald = "Donald - starting out \nPower level: lvl 1 \nHealth: 10hp";
-	string mDonald = "Donald - maxed out \nPower level: lvl 99 \nHealth: 111hp";
-	string goofy = "Goofy - starting out \nPower level: lvl 1 \nHealth: 10hp";
-	string mGoofy = "Goofy - maxed out \nPower level: lvl 99 \nHealth: 111hp";
+	string sora = "\nSora - starting out \nPower level: lvl 1 \nHealth: 10hp\n";
+	string mSora = "\nSora - maxed out \nPower level: lvl 99 \nHealth: 111hp\n";
+	string donald = "\nDonald - starting out \nPower level: lvl 1 \nHealth: 10hp\n";
+	string mDonald = "\nDonald - maxed out \nPower level: lvl 99 \nHealth: 111hp\n";
+	string goofy = "\nGoofy - starting out \nPower level: lvl 1 \nHealth: 10hp\n";
+	string mGoofy = "\nGoofy - maxed out \nPower level: lvl 99 \nHealth: 111hp\n";
 
 	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
 	int choice;
@@ -70,31 +70,37 @@ void printCharacter(const shared_ptr<Information> information)
 	case 1: {
 		information->AddSoraCharacters(sora);
 		information->AddSoraCharacters(mSora);
-		break;
+		cout << information->sCharactersInfo() << endl;
 	}
+		break;
 		
 	case 2: {
 		information->AddDonaldCharacters(donald);
 		information->AddDonaldCharacters(mDonald);
-		break;
+		cout << information->dCharactersInfo() << endl;
 	}
-		
+		break;
 	case 3: {
 		information->AddGoofyCharacters(goofy);
 		information->AddGoofyCharacters(mGoofy);
-		break;
+		cout << information->gCharactersInfo() << endl;
 	}
+		break;
 		
 	case 4: {
 		information->AddSoraCharacters(sora);
 		information->AddSoraCharacters(mSora);
+		cout << information->sCharactersInfo() << endl;
+
 		information->AddDonaldCharacters(donald);
 		information->AddDonaldCharacters(mDonald);
+		cout << information->dCharactersInfo() << endl;
+
 		information->AddGoofyCharacters(goofy);
 		information->AddGoofyCharacters(mGoofy);
-		break;
+		cout << information->gCharactersInfo() << endl;
 	}
-		
+		break;
 
 	default: break;
 	}
@@ -152,13 +158,13 @@ void printAbilities(const shared_ptr<Information> information)
 {
 	system("cls");
 
-	string sAbilities = "\n\nGuard \nUpper Slash \nHorizontal Slash \nFinishing Leap \nRetaliating Slash"
+	string sAbilities = "\nGuard \nUpper Slash \nHorizontal Slash \nFinishing Leap \nRetaliating Slash"
 		"\nSlapshot \nDoge Slash \nSlide Dash \nGuard Break \nExplosion \nAerial Sweep \nAerial Spiral \nAerial Finish"
-		"\nCounterGuard \nAuto Valor \nAuto Master \nAuto Final \nAuto Summon \nTrinity Limit\n";
+		"\nCounterGuard \nAuto Valor \nAuto Master \nAuto Final \nAuto Summon \nTrinity Limit\n\n";
 	
-	string dAbilities = "\n\nDonald Fire \nDonald Blizzard \nDonald Thunder \nDonald Cure \nFantasia \nFlare Force\n";
+	string dAbilities = "\nDonald Fire \nDonald Blizzard \nDonald Thunder \nDonald Cure \nFantasia \nFlare Force\n\n";
 
-	string gAbilities = "\n\nGoofy Tornado \nGoofy Bash \nGoofy Turbo \nTeamwork \nTornado Fusion\n";
+	string gAbilities = "\nGoofy Tornado \nGoofy Bash \nGoofy Turbo \nTeamwork \nTornado Fusion\n\n";
 
 	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
 	int choice;

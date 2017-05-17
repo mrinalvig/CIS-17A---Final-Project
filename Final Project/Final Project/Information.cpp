@@ -92,22 +92,54 @@ std::string Information::dAbilitiesInfo()
 
 std::string Information::gAbilitiesInfo()
 {
-	return std::string();
+	std::string result = "GOOFY ABILITIES: \n";
+
+	std::shared_ptr<Abilities> ptr = goofyAbilities.back();
+	result += ptr->getAbilities();
+
+	return result;
 }
 
 std::string Information::sCharactersInfo()
 {
-	return std::string();
+	std::string output = "SORA STATS: \n";
+
+	std::shared_ptr<Characters> sora = soraCharacters.back();
+
+	for (auto sora : soraCharacters)
+	{
+		output += sora->getCharacters();
+	}
+	
+	return output;
 }
 
 std::string Information::dCharactersInfo()
 {
-	return std::string();
+	std::string output = "DONALD STATS: \n";
+
+	std::shared_ptr<Characters> donald = donaldCharacters.back();
+
+	for (auto donald : donaldCharacters)
+	{
+		output += donald->getCharacters();
+	}
+
+	return output;
 }
 
 std::string Information::gCharactersInfo()
 {
-	return std::string();
+	std::string output = "GOOFY STATS: \n";
+
+	std::shared_ptr<Characters> goofy = goofyCharacters.back();
+
+	for (auto goofy : goofyCharacters)
+	{
+		output += goofy->getCharacters();
+	}
+
+	return output;
 }
 
 std::string Information::formsInfo()

@@ -7,13 +7,11 @@ private:
 	std::string name;
 
 public:
-
-	int power;
-	int health;
-	std::string info();
-
 	Characters(std::string name);
 	~Characters();
+
+	std::string getCharacters() const { return name; };
+	std::string Abilitiess() { return "CHARACTERS: \n" + name; };
 
 };
 
