@@ -7,8 +7,8 @@ private:
 	std::string outfits;
 
 public:
-	std::string info();
-
 	Forms(std::string outfits);
 	~Forms();
+
+	std::string getForms() const { return outfits; };
 };

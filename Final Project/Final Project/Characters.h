@@ -11,7 +11,6 @@ public:
 	~Characters();
 
 	std::string getCharacters() const { return name; };
-	std::string Abilitiess() { return "CHARACTERS: \n" + name; };
 
 };
 

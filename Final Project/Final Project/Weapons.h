@@ -8,9 +8,9 @@ private:
 	std::string keyblades;
 
 public:
-	std::string info();
-
 	Weapons(std::string keyblades);
 	~Weapons();
+
+	std::string getWeapons() const { return keyblades; };
 };
 

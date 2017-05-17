@@ -11,5 +11,4 @@ public:
 	~Abilities();
 	
 	std::string getAbilities() const { return abilities; };
-	std::string Abilitiess(){return "ABILITIES: \n" + abilities;};
 };

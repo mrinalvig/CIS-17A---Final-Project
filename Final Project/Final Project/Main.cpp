@@ -112,15 +112,15 @@ void printWeapons(const shared_ptr<Information> information)
 {
 	system("cls");
 
-	string sWeapons = "\n\nKindom Key \nStar Seeker \nHidden Dragon \nHero's Crest \nMonochrome" 
+	string sWeapons = "\nKindom Key \nStar Seeker \nHidden Dragon \nHero's Crest \nMonochrome" 
 		"\nFollow the Wind \nCircle of Life \nPhoton Debugger \nOathkeeper \nRumbling Rose \nGuardian Soul" 
 		"\nWishing Lamp \nDecisive Pumpin \nMysterious Abyss \nGull Wing \nSleeping Lion \nSweet Memory" 
 		"\nBond of Flame \nFatal Crest \nOblivion \nFenrir \nUltima Weapon\n";
 
-	string dWeapons = "\n\nMage's Staff \nHammer Staff \nComet Staff \nVictory Bell \nLord's Broom" 
+	string dWeapons = "\nMage's Staff \nHammer Staff \nComet Staff \nVictory Bell \nLord's Broom" 
 		"\nRising Dragon \nWisdom Wand \nShaman's Relic \nNobody Lance \nSave the Queen \nSave the Queen +\n";
 
-	string gWeapons = "\n\nKnight's Shield \nAdamant Shield \nFalling Star \nChain Gear \nDreamcloud" 
+	string gWeapons = "\nKnight's Shield \nAdamant Shield \nFalling Star \nChain Gear \nDreamcloud" 
 		"\nOgre Shield \nGenji Shield \nKnight Defender \nAkashic Record \nNobody Guard \nSave the King \nSave the King +\n";
 
 	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
@@ -131,22 +131,36 @@ void printWeapons(const shared_ptr<Information> information)
 
 	switch (choice)
 	{
-		case 1: information->AddSoraWeapons(sWeapons);
+		case 1: {
+			information->AddSoraWeapons(sWeapons);
+			cout << information->sWeaponsInfo() << endl;
+		}
 			break;
 		
-		case 2: information->AddDonaldWeapons(dWeapons);
+		case 2: {
+			information->AddDonaldWeapons(dWeapons);
+			cout << information->dWeaponsInfo() << endl;
+		}
 			break;
 		
-		case 3: information->AddGoofyWeapons(gWeapons);
+		case 3: {
+			information->AddGoofyWeapons(gWeapons);
+			cout << information->gWeaponsInfo() << endl;
+		}
 			break;
 		
 
 		case 4: {
 			information->AddSoraWeapons(sWeapons);
+			cout << information->sWeaponsInfo() << endl;
+
 			information->AddDonaldWeapons(dWeapons);
+			cout << information->dWeaponsInfo() << endl;
+
 			information->AddGoofyWeapons(gWeapons);
-			break;
+			cout << information->gWeaponsInfo() << endl;
 		}
+			break;
 
 	default: break;
 	}
@@ -211,10 +225,11 @@ void printForms(const shared_ptr<Information> information)
 {
 	system("cls");
 
-	string sora ="\n\nValor Form \nWisdom Form \nMaster Form \nFinal Form \nAnti Form \n";
+	string sora ="\nValor Form \nWisdom Form \nMaster Form \nFinal Form \nAnti Form \n";
 
 	cout << "Sora is the only one with multiple forms. \n" << endl;
 	information->AddForms(sora);
+	cout << information->formsInfo() << endl;
 
 	system("pause");
 }

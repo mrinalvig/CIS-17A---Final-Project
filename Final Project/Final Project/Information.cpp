@@ -144,20 +144,40 @@ std::string Information::gCharactersInfo()
 
 std::string Information::formsInfo()
 {
-	return std::string();
+	std::string result = "SORA FORMS: \n";
+
+	std::shared_ptr<Forms> ptr = forms.back();
+	result += ptr->getForms();
+
+	return result;
 }
 
 std::string Information::sWeaponsInfo()
 {
-	return std::string();
+	std::string result = "SORA WEAPONS: \n";
+
+	std::shared_ptr<Weapons> ptr = soraWeapons.back();
+	result += ptr->getWeapons();
+
+	return result;
 }
 
 std::string Information::dWeaponsInfo()
 {
-	return std::string();
+	std::string result = "DONALD WEAPONS: \n";
+
+	std::shared_ptr<Weapons> ptr = donaldWeapons.back();
+	result += ptr->getWeapons();
+
+	return result;
 }
 
 std::string Information::gWeaponsInfo()
 {
-	return std::string();
+	std::string result = "GOOFY WEAPONS: \n";
+
+	std::shared_ptr<Weapons> ptr = goofyWeapons.back();
+	result += ptr->getWeapons();
+
+	return result;
 }
