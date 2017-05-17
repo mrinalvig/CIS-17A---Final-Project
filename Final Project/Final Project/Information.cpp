@@ -72,16 +72,22 @@ void Information::AddGoofyWeapons(std::string name)
 
 std::string Information::sAbilitiesInfo()
 {
-	std::string result = "ABILITIES: \n";
+	std::string result = "SORA ABILITIES: \n";	
 	
-	//result += soraAbilities.pop_back();
+	std::shared_ptr<Abilities> ptr = soraAbilities.back();
+	result += ptr->getAbilities();
 
 	return result;
 }
 
 std::string Information::dAbilitiesInfo()
 {
-	return std::string();
+	std::string result = "DONALD ABILITIES: \n";
+
+	std::shared_ptr<Abilities> ptr = donaldAbilities.back();
+	result += ptr->getAbilities();
+
+	return result;
 }
 
 std::string Information::gAbilitiesInfo()

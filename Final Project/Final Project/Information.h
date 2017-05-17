@@ -24,7 +24,7 @@ private:
 	std::string name;
 
 public:
-	Information(std::string _name);
+	Information(std::string name);
 	~Information();
 
 	void AddSoraAbilities(std::string name);

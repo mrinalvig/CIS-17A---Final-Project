@@ -168,16 +168,28 @@ void printAbilities(const shared_ptr<Information> information)
 
 	switch (choice)
 	{
-		case 1: information->AddSoraAbilities(sAbilities);
+		case 1: {
+			information->AddSoraAbilities(sAbilities);
+			cout << information->sAbilitiesInfo() << endl;
+		}
 			break;
-		case 2: information->AddDonaldAbilities(dAbilities);
+		case 2: {
+			information->AddDonaldAbilities(dAbilities);
+			cout << information->dAbilitiesInfo() << endl;
+		}
 			break;
-		case 3: information->AddGoofyAbilities(gAbilities);
+		case 3: {
+			information->AddGoofyAbilities(gAbilities);
+			cout << information->gAbilitiesInfo() << endl;
+		}
 			break;
 		case 4: {
 			information->AddSoraAbilities(sAbilities);
+			cout << information->sAbilitiesInfo() << endl;
 			information->AddDonaldAbilities(dAbilities);
+			cout << information->dAbilitiesInfo() << endl;
 			information->AddGoofyAbilities(gAbilities);
+			cout << information->gAbilitiesInfo() << endl;
 			break;
 		}
 
