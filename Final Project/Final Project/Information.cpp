@@ -31,19 +31,19 @@ void Information::AddGoofyAbilities(std::string name)
 void Information::AddSoraCharacters(std::string name)
 {
 	auto characterss = std::make_shared<Characters>(name);
-	soraCharacters.push_back(characterss);
+	soraCharacters.push(characterss);
 }
 
 void Information::AddDonaldCharacters(std::string name)
 {
 	auto characterss = std::make_shared<Characters>(name);
-	donaldCharacters.push_back(characterss);
+	donaldCharacters.push(characterss);
 }
 
 void Information::AddGoofyCharacters(std::string name)
 {
 	auto characterss = std::make_shared<Characters>(name);
-	goofyCharacters.push_back(characterss);
+	goofyCharacters.push(characterss);
 }
 
 void Information::AddForms(std::string name)
@@ -104,10 +104,10 @@ std::string Information::sCharactersInfo()
 {
 	std::string output = "SORA STATS: \n";
 
-	std::shared_ptr<Characters> sora = soraCharacters.back();
-
-	for (auto sora : soraCharacters)
+	while (soraCharacters.size() > 0)
 	{
+		std::shared_ptr<Characters> sora = soraCharacters.front();
+		soraCharacters.pop();
 		output += sora->getCharacters();
 	}
 	
@@ -118,10 +118,10 @@ std::string Information::dCharactersInfo()
 {
 	std::string output = "DONALD STATS: \n";
 
-	std::shared_ptr<Characters> donald = donaldCharacters.back();
-
-	for (auto donald : donaldCharacters)
+	while (donaldCharacters.size() > 0)
 	{
+		std::shared_ptr<Characters> donald = donaldCharacters.front();
+		donaldCharacters.pop();
 		output += donald->getCharacters();
 	}
 
@@ -132,10 +132,10 @@ std::string Information::gCharactersInfo()
 {
 	std::string output = "GOOFY STATS: \n";
 
-	std::shared_ptr<Characters> goofy = goofyCharacters.back();
-
-	for (auto goofy : goofyCharacters)
+	while (goofyCharacters.size() > 0)
 	{
+		std::shared_ptr<Characters> goofy = goofyCharacters.front();
+		goofyCharacters.pop();
 		output += goofy->getCharacters();
 	}
 

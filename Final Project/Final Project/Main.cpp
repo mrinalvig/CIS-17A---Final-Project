@@ -217,8 +217,6 @@ void printAbilities(const shared_ptr<Information> information)
 	} 
 
 	system("pause");
-	
-
 }
 
 void printForms(const shared_ptr<Information> information)

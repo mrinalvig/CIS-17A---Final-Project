@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <queue>
 #include <memory>
 #include "Abilities.h"
 #include "Characters.h"
@@ -13,9 +14,9 @@ private:
 	std::vector<std::shared_ptr<Abilities>> soraAbilities;
 	std::vector<std::shared_ptr<Abilities>> donaldAbilities;
 	std::vector<std::shared_ptr<Abilities>> goofyAbilities;
-	std::vector<std::shared_ptr<Characters>> soraCharacters;
-	std::vector<std::shared_ptr<Characters>> donaldCharacters;
-	std::vector<std::shared_ptr<Characters>> goofyCharacters;
+	std::queue<std::shared_ptr<Characters>> soraCharacters;
+	std::queue<std::shared_ptr<Characters>> donaldCharacters;
+	std::queue<std::shared_ptr<Characters>> goofyCharacters;
 	std::vector<std::shared_ptr<Forms>> forms;
 	std::vector<std::shared_ptr<Weapons>> soraWeapons;
 	std::vector<std::shared_ptr<Weapons>> donaldWeapons;
