@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include "Characters.h"
+#include <algorithm>
+#include "Character.h"
 #include "Weapons.h"
 #include "Abilities.h"
 #include "Forms.h"
@@ -8,7 +9,7 @@
 using namespace std;
 
 void printCharacter(const shared_ptr<Information> information);
-void printWeapons(const shared_ptr<Information> information);
+void printWeapons(const shared_ptr<Character> character, const shared_ptr<Information> information);
 void printAbilities(const shared_ptr<Information> information);
 void printForms(const shared_ptr<Information> information);
 
@@ -18,11 +19,12 @@ int main()
 	int thing = 1;
 	string name;
 	auto information = make_shared<Information>(name);
+	auto character = make_shared<Character>(name);
 	
 	while (thing = 1)
 	{
 		system("cls");
-		cout << "Welcome to Kingdom Hearts 2 Stats! Would you like info on: \n1. Characters \n2. Weapons \n3. Abilities \n4. Forms \n5. Exit" << endl;
+		cout << "Welcome! Would you like to: \n1. Create a Character \n2. Add Weapons \n3. Add Abilities \n4. Add Forms \n5. Exit" << endl;
 		int choice;
 		cin >> choice;
 
@@ -30,7 +32,7 @@ int main()
 		{
 		case 1: printCharacter(information);
 			break;
-		case 2: printWeapons(information);
+		case 2: printWeapons(character, information);
 			break;
 		case 3:printAbilities(information);
 			break;
@@ -51,64 +53,45 @@ void printCharacter(const shared_ptr<Information> information)
 {
 	system("cls");
 
-	string sora = "\nSora - starting out \nPower level: lvl 1 \nHealth: 10hp\n";
-	string mSora = "\nSora - maxed out \nPower level: lvl 99 \nHealth: 111hp\n";
-	string donald = "\nDonald - starting out \nPower level: lvl 1 \nHealth: 10hp\n";
-	string mDonald = "\nDonald - maxed out \nPower level: lvl 99 \nHealth: 111hp\n";
-	string goofy = "\nGoofy - starting out \nPower level: lvl 1 \nHealth: 10hp\n";
-	string mGoofy = "\nGoofy - maxed out \nPower level: lvl 99 \nHealth: 111hp\n";
+	bool loop = true;
 
-	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
-	int choice;
-	cin >> choice;
-
-	system("cls");
-
-	switch (choice)
+	while (loop == true)
 	{
+		system("cls");
 
-	case 1: {
-		information->AddSoraCharacters(sora);
-		information->AddSoraCharacters(mSora);
-		cout << information->sCharactersInfo() << endl;
-	}
-		break;
+		cout << "Would you like to: \n1. Create an Angel \n2. Create a Demon \n3. Create a Nephilim \n4. Create a Human \n5. Print All Characters \n6. Finished Making Characters" << endl;
+		int choice;
+		cin >> choice;
+
+		switch (choice)
+		{
+
+		case 1: information->AddCharacter("Angel\n");
+			break;
+		case 2: information->AddCharacter("Demon\n");
+			break;
+		case 3: information->AddCharacter("Nephilim\n");
+			break;
+
+		case 4: information->AddCharacter("Human\n");
+			break;
+		case 5:{
+			cout << information->CharacterInfo() << endl;
+			system("pause");
+		}
+			break;
+		case 6: loop = false;
+			break;
 		
-	case 2: {
-		information->AddDonaldCharacters(donald);
-		information->AddDonaldCharacters(mDonald);
-		cout << information->dCharactersInfo() << endl;
-	}
-		break;
-	case 3: {
-		information->AddGoofyCharacters(goofy);
-		information->AddGoofyCharacters(mGoofy);
-		cout << information->gCharactersInfo() << endl;
-	}
-		break;
-		
-	case 4: {
-		information->AddSoraCharacters(sora);
-		information->AddSoraCharacters(mSora);
-		cout << information->sCharactersInfo() << endl;
+		default: break;
+		}
 
-		information->AddDonaldCharacters(donald);
-		information->AddDonaldCharacters(mDonald);
-		cout << information->dCharactersInfo() << endl;
-
-		information->AddGoofyCharacters(goofy);
-		information->AddGoofyCharacters(mGoofy);
-		cout << information->gCharactersInfo() << endl;
-	}
-		break;
-
-	default: break;
 	}
 	
 	system("pause");
 }
 
-void printWeapons(const shared_ptr<Information> information)
+void printWeapons(const shared_ptr<Character> character, const shared_ptr<Information> information)
 {
 	system("cls");
 
@@ -121,9 +104,9 @@ void printWeapons(const shared_ptr<Information> information)
 		"\nRising Dragon \nWisdom Wand \nShaman's Relic \nNobody Lance \nSave the Queen \nSave the Queen +\n";
 
 	string gWeapons = "\nKnight's Shield \nAdamant Shield \nFalling Star \nChain Gear \nDreamcloud" 
-		"\nOgre Shield \nGenji Shield \nKnight Defender \nAkashic Record \nNobody Guard \nSave the King \nSave the King +\n";
+		"\nOgre Shield \nGenji Shield \nKnight Defender \nAkashic Record \nNobody Guard \nSave the King \nSave the King +\n";  
 
-	cout << "Would you like info on: \n1. Sora \n2. Donald \n3. Goofy \n4. All" << endl;
+	cout << "Would you like to add weapons for: \n1. Angels \n2. Demons \n3. Nephilim \n4. Humans" << endl;
 	int choice;
 	cin >> choice;
 
@@ -132,33 +115,40 @@ void printWeapons(const shared_ptr<Information> information)
 	switch (choice)
 	{
 		case 1: {
-			information->AddSoraWeapons(sWeapons);
-			cout << information->sWeaponsInfo() << endl;
+
+			for (int i = 0; i < information->character.size(); i++)
+			{
+				if (character->getCharacters[i] == "Angel")
+				{
+					character->AddWeapon[i]("Angelic Scythe");
+				}
+			}
+			cout << character->WeaponInfo() << endl;
 		}
 			break;
 		
 		case 2: {
-			information->AddDonaldWeapons(dWeapons);
-			cout << information->dWeaponsInfo() << endl;
+			character->AddWeapon(dWeapons);
+			cout << character->WeaponInfo() << endl;
 		}
 			break;
 		
 		case 3: {
-			information->AddGoofyWeapons(gWeapons);
-			cout << information->gWeaponsInfo() << endl;
+			character->AddWeapon(gWeapons);
+			cout << character->WeaponInfo() << endl;
 		}
 			break;
 		
 
 		case 4: {
-			information->AddSoraWeapons(sWeapons);
-			cout << information->sWeaponsInfo() << endl;
+			character->AddWeapon(sWeapons);
+			cout << character->WeaponInfo() << endl;
 
-			information->AddDonaldWeapons(dWeapons);
-			cout << information->dWeaponsInfo() << endl;
+			character->AddWeapon(dWeapons);
+			cout << character->WeaponInfo() << endl;
 
-			information->AddGoofyWeapons(gWeapons);
-			cout << information->gWeaponsInfo() << endl;
+			character->AddWeapon(gWeapons);
+			cout << character->WeaponInfo() << endl;
 		}
 			break;
 

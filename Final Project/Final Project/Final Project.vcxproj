@@ -147,7 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Abilities.cpp" />
-    <ClCompile Include="Characters.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="Forms.cpp" />
     <ClCompile Include="Information.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -155,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Abilities.h" />
-    <ClInclude Include="Characters.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Forms.h" />
     <ClInclude Include="Information.h" />
     <ClInclude Include="Weapons.h" />
