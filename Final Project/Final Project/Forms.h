@@ -10,5 +10,5 @@ public:
 	Forms(std::string outfits);
 	~Forms();
 
-	std::string getForms() const { return outfits; };
+	std::string getForms() const { return "         " + outfits; };
 };

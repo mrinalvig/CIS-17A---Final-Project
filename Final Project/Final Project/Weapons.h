@@ -11,6 +11,6 @@ public:
 	Weapons(std::string keyblades);
 	~Weapons();
 
-	std::string getWeapons() const { return keyblades; };
+	std::string getWeapons() const { return "         " + keyblades; };
 };
 

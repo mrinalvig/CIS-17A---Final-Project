@@ -31,7 +31,7 @@ void Character::AddForm(std::string name)
 
 std::string Character::WeaponInfo()
 {
-	std::string result = "		\nWEAPONS: \n";
+	std::string result = "   WEAPONS: \n";
 
 	for (auto ptr : weapon)
 	{
@@ -43,7 +43,7 @@ std::string Character::WeaponInfo()
 
 std::string Character::AbilityInfo()
 {
-	std::string result = "		\nABILITIES: \n";
+	std::string result = "   ABILITIES: \n";
 
 	for (auto power : ability)
 	{
@@ -55,7 +55,7 @@ std::string Character::AbilityInfo()
 
 std::string Character::formInfo()
 {
-	std::string result = "		\nFORMS: \n";
+	std::string result = "   FORMS: \n";
 
 	for (auto forms : form)
 	{

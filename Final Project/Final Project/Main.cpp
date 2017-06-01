@@ -6,7 +6,7 @@
 using namespace std;
 
 void printCharacter(const shared_ptr<Information> information);
-void printWeapons(const shared_ptr<Character> character, const shared_ptr<Information> information, const shared_ptr<Weapons> weapons);
+void printWeapons(const shared_ptr<Character> character, const shared_ptr<Information> information);
 void printAbilities(const shared_ptr<Character> character, const shared_ptr<Information> information);
 void printForms(const shared_ptr<Character> character, const shared_ptr<Information> information);
 void printInfo(const shared_ptr<Character> character, const shared_ptr<Information> information);
@@ -18,7 +18,6 @@ int main()
 	string name;
 	auto information = make_shared<Information>(name);
 	auto character = make_shared<Character>(name);
-	auto weapons = std::make_shared<Weapons>(name);
 	
 	while (thing = 1)
 	{
@@ -31,7 +30,7 @@ int main()
 		{
 		case 1: printCharacter(information);
 			break;
-		case 2: printWeapons(character, information, weapons);
+		case 2: printWeapons(character, information);
 			break;
 		case 3:printAbilities(character, information);
 			break;
@@ -54,55 +53,64 @@ void printCharacter(const shared_ptr<Information> information)
 {
 	system("cls");
 
-	bool loop = true;
 
-	while (loop == true)
+	cout << "Would you like to: \n1. Create an Angel \n2. Create a Demon \n3. Create a Nephilim \n4. Create a Human \n5. Finished Making Characters" << endl;
+	int choice;
+	cin >> choice;
+
+	switch (choice)
 	{
-		system("cls");
 
-		cout << "Would you like to: \n1. Create an Angel \n2. Create a Demon \n3. Create a Nephilim \n4. Create a Human \n5. Finished Making Characters" << endl;
-		int choice;
-		cin >> choice;
+		case 1: {
+			information->AddCharacter("Angel");
+			cout << "Angel added!" << endl;
+			system("pause");
+			printCharacter(information);
+		}
+			break;
+		case 2: {
+			information->AddCharacter("Demon");
+			cout << "Demon added!" << endl;
+			system("pause");
+			printCharacter(information);
+		}
+			break;
+		case 3: {
+			information->AddCharacter("Nephilim");
+			cout << "Nephilim added!" << endl;
+			system("pause");
+			printCharacter(information);
+		}
+			break;
 
-		switch (choice)
-		{
-
-		case 1: information->AddCharacter("Angel");
+		case 4: {
+			information->AddCharacter("Human");
+			cout << "Human added!" << endl;
+			system("pause");
+			printCharacter(information);
+		}
 			break;
-		case 2: information->AddCharacter("Demon");
-			break;
-		case 3: information->AddCharacter("Nephilim");
-			break;
-
-		case 4: information->AddCharacter("Human");
-			break;
-		case 5: loop = false;
-			break;
+		case 5: {
+			cout << "Exiting" << endl;
+			system("pause");
+		}
 		
 		default: break;
-		}
-
 	}
-	
-	system("pause");
+
 }
 
-void printWeapons(const shared_ptr<Character> character, const shared_ptr<Information> information, const shared_ptr<Weapons> weapons)
+void printWeapons(const shared_ptr<Character> character, const shared_ptr<Information> information)
 {
 	system("cls");
 
-	bool loop = true;
+	cout << "Would you like to add weapons for: \n1. Angels \n2. Demons \n3. Nephilim \n4. Humans \n5. Finished adding Weapons" << endl;
+	int choice;
+	cin >> choice;
 
-	while (loop == true)
+	switch (choice)
 	{
-		cout << "Would you like to add weapons for: \n1. Angels \n2. Demons \n3. Nephilim \n4. Humans \n5. Finished adding Weapons" << endl;
-		int choice;
-		cin >> choice;
-
-		switch (choice)
-		{
 		case 1: {
-
 			for (auto player : information->character)
 			{
 				if (player->getCharacters() == "Angel")
@@ -112,6 +120,7 @@ void printWeapons(const shared_ptr<Character> character, const shared_ptr<Inform
 				}
 			}
 			system("pause");
+			printWeapons(character, information);
 		}
 				break;
 
@@ -125,6 +134,7 @@ void printWeapons(const shared_ptr<Character> character, const shared_ptr<Inform
 				}
 			}
 			system("pause");
+			printWeapons(character, information);
 		}
 				break;
 
@@ -138,6 +148,7 @@ void printWeapons(const shared_ptr<Character> character, const shared_ptr<Inform
 				}
 			}
 			system("pause");
+			printWeapons(character, information);
 		}
 				break;
 
@@ -151,35 +162,31 @@ void printWeapons(const shared_ptr<Character> character, const shared_ptr<Inform
 				}
 			}
 			system("pause");
-		}
-				break;
-
-		case 5: loop = false;
+			printWeapons(character, information);
+	}
 			break;
 
-		default: break;
+		case 5: {
+			cout << "Exiting" << endl;
 		}
-	}
+			break;
 
-	system("pause");
+	default: break;
+	}
+	
 }
 
 void printAbilities(const shared_ptr<Character> character, const shared_ptr<Information> information)
 {
 	system("cls");
 
-	bool loop = true;
+	
+	cout << "Would you like to add abilities for: \n1. Angels \n2. Devils \n3. Nephilim \n4. Humans \n5. Exit" << endl;
+	int choice;
+	cin >> choice;
 
-	while (loop == true)
+	switch (choice)
 	{
-		cout << "Would you like to add abilities for: \n1. Angels \n2. Devils \n3. Nephilim \n4. Humans \n5. Exit" << endl;
-		int choice;
-		cin >> choice;
-
-		system("cls");
-
-		switch (choice)
-		{
 		case 1: {
 
 			cout << "Which ability would you like to add for Angels?: \n1. Angel Evade \n2. Angel Boost \n3. Angel Lift" << endl;
@@ -212,6 +219,7 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 				}
 			}
 			system("pause");
+			printAbilities(character, information);
 		}
 				break;
 		case 2: {
@@ -245,6 +253,7 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 				}
 			}
 			system("pause");
+			printAbilities(character, information);
 		}
 				break;
 		case 3: {
@@ -278,6 +287,7 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 				}
 			}
 			system("pause");
+			printAbilities(character, information);
 		}
 				break;
 		case 4: {
@@ -311,32 +321,29 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 				}
 			}
 			system("pause");
-			break;
+			printAbilities(character, information);
 		}
-		case 5: loop = false;
+				break;
+		case 5: {
+			cout << "Exiting" << endl;
+			system("pause");
+		}
 			break;
 
 		default: break;
-		}
 	}
-
-	system("pause");
 }
 
 void printForms(const shared_ptr<Character> character, const shared_ptr<Information> information)
 {
 	system("cls");
 
-	bool loop = true;
+	cout << "Would you like to create a form for: \n1. Angels \n2. Demons \n3. Nephilim \n4. Humans \n5. Finished creating Forms" << endl;
+	int choice;
+	cin >> choice;
 
-	while (loop == true)
+	switch (choice)
 	{
-		cout << "Would you like to create a form for: \n1. Angels \n2. Demons \n3. Nephilim \n4. Humans \n5. Finished creating Forms" << endl;
-		int choice;
-		cin >> choice;
-
-		switch (choice)
-		{
 		case 1: {
 
 			for (auto player : information->character)
@@ -348,6 +355,7 @@ void printForms(const shared_ptr<Character> character, const shared_ptr<Informat
 				}
 			}
 			system("pause");
+			printForms(character, information);
 		}
 				break;
 
@@ -361,6 +369,7 @@ void printForms(const shared_ptr<Character> character, const shared_ptr<Informat
 				}
 			}
 			system("pause");
+			printForms(character, information);
 		}
 				break;
 
@@ -374,6 +383,7 @@ void printForms(const shared_ptr<Character> character, const shared_ptr<Informat
 				}
 			}
 			system("pause");
+			printForms(character, information);
 		}
 				break;
 
@@ -387,32 +397,35 @@ void printForms(const shared_ptr<Character> character, const shared_ptr<Informat
 				}
 			}
 			system("pause");
+			printForms(character, information);
 		}
 				break;
 
-		case 5: loop = false;
+		case 5: {
+			cout << "Exiting" << endl;
+			system("pause");
+		}
 			break;
 
 		default: break;
-		}
 	}
-
-	system("pause");
 }
 
 void printInfo(const shared_ptr<Character> character, const shared_ptr<Information> information)
 {
+	system("cls");
+
 	int index = 1;
 	for (auto characterss : information->character)
 	{
 		cout << "Character " << index << " - " << characterss->getCharacters() << ":" << endl;
-		cout << "		" << characterss->WeaponInfo() << endl;
-		cout << "		" << characterss->AbilityInfo() << endl;
-		cout << "		" << characterss->formInfo() << endl;
+		cout << characterss->WeaponInfo() << endl;
+		cout << characterss->AbilityInfo() << endl;
+		cout << characterss->formInfo() << endl;
+		cout << "________________________________" << endl;
 		
 		index += 1;
 	}
 	system("pause");
-
 }
 

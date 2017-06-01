@@ -10,5 +10,5 @@ public:
 	Abilities(std::string abilities);
 	~Abilities();
 	
-	std::string getAbilities() const { return abilities; };
+	std::string getAbilities() const { return "         " + abilities; };
 };
