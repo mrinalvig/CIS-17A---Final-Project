@@ -19,7 +19,7 @@ int main()
 	auto information = make_shared<Information>(name);
 	auto character = make_shared<Character>(name);
 	
-	while (thing = 1)
+	while (thing == 1)
 	{
 		system("cls");
 		cout << "Welcome! Would you like to: \n1. Create a Character \n2. Add Weapons \n3. Add Abilities \n4. Add Forms \n5. Print Character info \n6. Exit" << endl;
@@ -189,7 +189,7 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 	{
 		case 1: {
 
-			cout << "Which ability would you like to add for Angels?: \n1. Angel Evade \n2. Angel Boost \n3. Angel Lift" << endl;
+			cout << "Which ability would you like to add for Angels?: \n1. Angel Evade \n2. Angel Boost \n3. Angel Lift \n4. Or all 3" << endl;
 			int aChoice;
 			cin >> aChoice;
 
@@ -214,6 +214,10 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 							cout << "Angel Lift added! \n" << endl;
 						}
 								break;
+						case 4: {
+							player->AddAbility("Angel Evade", "Angel Boost", "Angel Lift");
+							cout << "All 3 abilites added! \n" << endl; 
+						}
 					}
 					
 				}
@@ -233,21 +237,25 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 				{
 					switch (aChoice)
 					{
-					case 1: {
-						player->AddAbility("Demon Evade");
-						cout << "Demon Evade added! \n" << endl;
-					}
-							break;
-					case 2: {
-						player->AddAbility("Demon Pull");
-						cout << "Demon Pull added! \n" << endl;
-					}
-							break;
-					case 3: {
-						player->AddAbility("Devil Trigger");
-						cout << "Devil Trigger added! \n" << endl;
-					}
-							break;
+						case 1: {
+							player->AddAbility("Demon Evade");
+							cout << "Demon Evade added! \n" << endl;
+						}
+								break;
+						case 2: {
+							player->AddAbility("Demon Pull");
+							cout << "Demon Pull added! \n" << endl;
+						}
+								break;
+						case 3: {
+							player->AddAbility("Devil Trigger");
+							cout << "Devil Trigger added! \n" << endl;
+						}
+								break;
+						case 4: {
+							player->AddAbility("Demon Evade", "Demon Pull", "Devil Trigger");
+							cout << "All 3 abilites added! \n" << endl;
+						}
 					}
 
 				}
@@ -267,21 +275,25 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 				{
 					switch (aChoice)
 					{
-					case 1: {
-						player->AddAbility("Evade");
-						cout << "Evade added! \n" << endl;
-					}
-							break;
-					case 2: {
-						player->AddAbility("Jump");
-						cout << "Jump added! \n" << endl;
-					}
-							break;
-					case 3: {
-						player->AddAbility("Ricochet Kick");
-						cout << "Ricochet Kick added! \n" << endl;
-					}
-							break;
+						case 1: {
+							player->AddAbility("Evade");
+							cout << "Evade added! \n" << endl;
+						}
+								break;
+						case 2: {
+							player->AddAbility("Jump");
+							cout << "Jump added! \n" << endl;
+						}
+								break;
+						case 3: {
+							player->AddAbility("Ricochet Kick");
+							cout << "Ricochet Kick added! \n" << endl;
+						}
+								break;
+						case 4: {
+							player->AddAbility("Evade", "Jump", "Ricochet Kick");
+							cout << "All 3 abilites added! \n" << endl;
+						}
 					}
 
 				}
@@ -301,21 +313,25 @@ void printAbilities(const shared_ptr<Character> character, const shared_ptr<Info
 				{
 					switch (aChoice)
 					{
-					case 1: {
-						player->AddAbility("Jump");
-						cout << "Jump added! \n" << endl;
-					}
-							break;
-					case 2: {
-						player->AddAbility("Enemy Step");
-						cout << "Enemy Step added! \n" << endl;
-					}
-							break;
-					case 3: {
-						player->AddAbility("Payoff");
-						cout << "Payoff added! \n" << endl;
-					}
-							break;
+						case 1: {
+							player->AddAbility("Jump");
+							cout << "Jump added! \n" << endl;
+						}
+								break;
+						case 2: {
+							player->AddAbility("Enemy Step");
+							cout << "Enemy Step added! \n" << endl;
+						}
+								break;
+						case 3: {
+							player->AddAbility("Payoff");
+							cout << "Payoff added! \n" << endl;
+						}
+								break;
+						case 4: {
+							player->AddAbility("Jump", "Enemy Step", "Payoff");
+							cout << "All 3 abilites added! \n" << endl;
+						}
 					}
 
 				}

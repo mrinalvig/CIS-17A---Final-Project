@@ -1,9 +1,9 @@
 #include "Character.h"
 #include <string>
 
-Character::Character(std::string iName)
+Character::Character(std::string _name)
 {
-	name = iName;
+	name = _name;
 }
 
 Character::~Character()
@@ -20,6 +20,16 @@ void Character::AddAbility(std::string _name)
 {
 	auto sAbilities = std::make_shared<Abilities>(_name);
 	ability.push_back(sAbilities);
+}
+
+void Character::AddAbility(std::string _name, std::string _name2, std::string _name3)
+{
+	auto Abilities1 = std::make_shared<Abilities>(_name);
+	auto Abilities2 = std::make_shared<Abilities>(_name2);
+	auto Abilities3 = std::make_shared<Abilities>(_name3);
+	ability.push_back(Abilities1);
+	ability.push_back(Abilities2);
+	ability.push_back(Abilities3);
 }
 
 void Character::AddForm(std::string name)
